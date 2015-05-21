@@ -14,6 +14,7 @@
 		EED8182F1B0DB694008F15FE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EED8182D1B0DB694008F15FE /* LaunchScreen.xib */; };
 		EED8183B1B0DB694008F15FE /* Tic_Tac_TowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EED8183A1B0DB694008F15FE /* Tic_Tac_TowTests.m */; };
 		EED818461B0DBF5A008F15FE /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EED818451B0DBF5A008F15FE /* WelcomeViewController.m */; };
+		EED818491B0DCD86008F15FE /* TicTacTowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EED818481B0DCD86008F15FE /* TicTacTowViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		EED8183A1B0DB694008F15FE /* Tic_Tac_TowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tic_Tac_TowTests.m; sourceTree = "<group>"; };
 		EED818441B0DBF5A008F15FE /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		EED818451B0DBF5A008F15FE /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		EED818471B0DCD86008F15FE /* TicTacTowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicTacTowViewController.h; sourceTree = "<group>"; };
+		EED818481B0DCD86008F15FE /* TicTacTowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicTacTowViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +89,8 @@
 				EED818221B0DB694008F15FE /* AppDelegate.h */,
 				EED818231B0DB694008F15FE /* AppDelegate.m */,
 				EED818281B0DB694008F15FE /* Main.storyboard */,
+				EED818471B0DCD86008F15FE /* TicTacTowViewController.h */,
+				EED818481B0DCD86008F15FE /* TicTacTowViewController.m */,
 				EED8182B1B0DB694008F15FE /* Images.xcassets */,
 				EED8182D1B0DB694008F15FE /* LaunchScreen.xib */,
 				EED8181E1B0DB694008F15FE /* Supporting Files */,
@@ -220,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EED818241B0DB694008F15FE /* AppDelegate.m in Sources */,
+				EED818491B0DCD86008F15FE /* TicTacTowViewController.m in Sources */,
 				EED818211B0DB694008F15FE /* main.m in Sources */,
 				EED818461B0DBF5A008F15FE /* WelcomeViewController.m in Sources */,
 			);
