@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		EED818211B0DB694008F15FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EED818201B0DB694008F15FE /* main.m */; };
 		EED818241B0DB694008F15FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EED818231B0DB694008F15FE /* AppDelegate.m */; };
-		EED818271B0DB694008F15FE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EED818261B0DB694008F15FE /* ViewController.m */; };
 		EED8182A1B0DB694008F15FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EED818281B0DB694008F15FE /* Main.storyboard */; };
 		EED8182C1B0DB694008F15FE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EED8182B1B0DB694008F15FE /* Images.xcassets */; };
 		EED8182F1B0DB694008F15FE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EED8182D1B0DB694008F15FE /* LaunchScreen.xib */; };
 		EED8183B1B0DB694008F15FE /* Tic_Tac_TowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EED8183A1B0DB694008F15FE /* Tic_Tac_TowTests.m */; };
+		EED818461B0DBF5A008F15FE /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EED818451B0DBF5A008F15FE /* WelcomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +32,14 @@
 		EED818201B0DB694008F15FE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EED818221B0DB694008F15FE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EED818231B0DB694008F15FE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EED818251B0DB694008F15FE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EED818261B0DB694008F15FE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EED818291B0DB694008F15FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EED8182B1B0DB694008F15FE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EED8182E1B0DB694008F15FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EED818341B0DB694008F15FE /* Tic-Tac-TowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tic-Tac-TowTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EED818391B0DB694008F15FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EED8183A1B0DB694008F15FE /* Tic_Tac_TowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tic_Tac_TowTests.m; sourceTree = "<group>"; };
+		EED818441B0DBF5A008F15FE /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		EED818451B0DBF5A008F15FE /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +81,10 @@
 		EED8181D1B0DB694008F15FE /* Tic-Tac-Tow */ = {
 			isa = PBXGroup;
 			children = (
+				EED818441B0DBF5A008F15FE /* WelcomeViewController.h */,
+				EED818451B0DBF5A008F15FE /* WelcomeViewController.m */,
 				EED818221B0DB694008F15FE /* AppDelegate.h */,
 				EED818231B0DB694008F15FE /* AppDelegate.m */,
-				EED818251B0DB694008F15FE /* ViewController.h */,
-				EED818261B0DB694008F15FE /* ViewController.m */,
 				EED818281B0DB694008F15FE /* Main.storyboard */,
 				EED8182B1B0DB694008F15FE /* Images.xcassets */,
 				EED8182D1B0DB694008F15FE /* LaunchScreen.xib */,
@@ -219,9 +219,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EED818271B0DB694008F15FE /* ViewController.m in Sources */,
 				EED818241B0DB694008F15FE /* AppDelegate.m in Sources */,
 				EED818211B0DB694008F15FE /* main.m in Sources */,
+				EED818461B0DBF5A008F15FE /* WelcomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

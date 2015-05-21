@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  WelcomeViewController.h
 //  Tic-Tac-Tow
 //
 //  Created by Vijay Pratap Singh on 21/05/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface WelcomeViewController : UIViewController
 
 @end
-
