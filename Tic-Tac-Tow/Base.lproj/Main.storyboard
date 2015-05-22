@@ -166,12 +166,20 @@
                                     <action selector="buttonTabbed:" destination="Zwt-GU-Z4J" eventType="touchUpInside" id="suj-78-MrF"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player X term" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ipm-JB-Hsh">
+                                <rect key="frame" x="24" y="506" width="322" height="65"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.49156162064650871" green="0.59808084240000003" blue="0.30524485078425212" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="KX5-CD-aWl"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="600"/>
+                    <connections>
+                        <outlet property="showNameOfUser" destination="Ipm-JB-Hsh" id="ziG-0f-l0b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMX-jw-pME" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -13,6 +13,7 @@
 //@property(strong, nonatomic) NSArray *indexingForArray;
 @property(strong, nonatomic) NSMutableArray *fillMark;
 @property NSInteger count;
+@property (weak, nonatomic) IBOutlet UILabel *showNameOfUser;
 
 @end
 
@@ -31,10 +32,13 @@
 }
 - (IBAction)buttonTabbed:(id)sender {
     NSArray *mark = @[@"X",@"O"];
+    NSString *player = @"Player . term";
     [sender setTitle:mark[self.count%2] forState:UIControlStateNormal];
     [self.fillMark replaceObjectAtIndex:[sender tag] withObject:mark[self.count%2]];
     [sender setEnabled:NO];
     self.count++;
+    [self.showNameOfUser setText:[player stringByReplacingOccurrencesOfString:@"." withString:mark[self.count%2]]];
+    
 }
 
 /*
