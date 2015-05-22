@@ -10,26 +10,32 @@
 
 @interface TicTacTowViewController ()
 
+//@property(strong, nonatomic) NSArray *indexingForArray;
+@property(strong, nonatomic) NSMutableArray *fillMark;
+@property NSInteger count;
+
 @end
 
 @implementation TicTacTowViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.fillMark = [NSMutableArray arrayWithObjects:@"",@"",@"",@"",@"",@"",@"",@"",@"",@"", nil];
+//    self.fillMark = [NSArray arrayWithObjects:@"", nil];
+    self.count = 0;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-//UIView *lineView = [[UIView alloc] initWithFrame:CGRectMake(0, 200, self.view.bounds.size.width, 1)];
-//lineView.backgroundColor = [UIColor blackColor];
-//[self.view addSubview:lineView];
-//[lineView release];
-
+- (IBAction)buttonTabbed:(id)sender {
+    NSArray *mark = @[@"X",@"O"];
+    [sender setTitle:mark[self.count%2] forState:UIControlStateNormal];
+    [self.fillMark replaceObjectAtIndex:[sender tag] withObject:mark[self.count%2]];
+    [sender setEnabled:NO];
+    self.count++;
+}
 
 /*
 #pragma mark - Navigation
