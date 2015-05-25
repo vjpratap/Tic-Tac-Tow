@@ -7,6 +7,7 @@
 //
 
 #import "TicTacTowViewController.h"
+#import "WelcomeViewController.h"
 
 @interface TicTacTowViewController ()
 
@@ -69,21 +70,25 @@
     [self.showNameOfUser setText:[player stringByReplacingOccurrencesOfString:@"." withString:mark[self.count%2]]];
 }
 
+-(void)alertView : (UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+//        WelcomeViewController *Sec=[[WelcomeViewController alloc]init];
+//        [self.navigationController popViewController: animated:YES];
+        [[self navigationController] popViewControllerAnimated:YES];
+        NSLog(@" ======================== ");
+    }
+    
+}
+
 - (IBAction)buttonTabbed:(id)sender {
     NSArray *mark = @[@"X",@"O"];
     [sender setTitle:mark[self.count%2] forState:UIControlStateNormal];
     [sender setEnabled:NO];
     [self.fillMark replaceObjectAtIndex:[sender tag] withObject:mark[self.count%2]];
     if ([self isWin:mark[self.count%2]]) {
-        UIAlertView *toast = [[UIAlertView alloc] initWithTitle:nil message:[[@"Player " stringByAppendingString:mark[self.count%2]]stringByAppendingString:@" win"] delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
-        [toast show];
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-            [toast dismissWithClickedButtonIndex:0 animated:YES];
-        });
-        
+        UIAlertView *winMassage = [[UIAlertView alloc] initWithTitle:nil message:[[@"Player " stringByAppendingString:mark[self.count%2]]stringByAppendingString:@" win"] delegate:self cancelButtonTitle:nil otherButtonTitles:@"Play Again", nil];
+        [winMassage show];
     }
-    
     [self afterTabbingActions : mark];
 }
 
