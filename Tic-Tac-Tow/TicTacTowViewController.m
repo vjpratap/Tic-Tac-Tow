@@ -73,11 +73,20 @@
 -(void)alertView : (UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 0)
         [[self navigationController] popViewControllerAnimated:YES];
+//        self.fillMark = [NSMutableArray arrayWithObjects:@"",@"",@"",@"",@"",@"",@"",@"",@"",@"", nil];
+//    self.count = 0;
+//    [self viewDidLoad];
+
 }
 
--(void)alertMassageForWinner : (NSArray *)mark{
+-(void)gameResult : (NSArray *)mark{
     if ([self isWin:mark[self.count%2]]) {
         UIAlertView *winMassage = [[UIAlertView alloc] initWithTitle:nil message:[[@"Player " stringByAppendingString:mark[self.count%2]]stringByAppendingString:@" win"] delegate:self cancelButtonTitle:nil otherButtonTitles:@"Play Again", nil];
+        [winMassage show];
+    }
+    if (self.count == 8) {
+        UIAlertView *winMassage = [[UIAlertView alloc] initWithTitle:nil message:@"Match Tie" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Play Again", nil];
+        [self.showNameOfUser setText:@"Match Tie"];
         [winMassage show];
     }
 }
@@ -88,7 +97,7 @@
     [sender setEnabled:NO];
     [sender setTitleColor:[UIColor purpleColor] forState:UIControlStateNormal];
     [self.fillMark replaceObjectAtIndex:[sender tag] withObject:mark[self.count%2]];
-    [self alertMassageForWinner : mark];
+    [self gameResult : mark];
     [self afterTabbingActions : mark];
 }
 
