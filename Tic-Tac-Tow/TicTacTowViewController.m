@@ -71,24 +71,24 @@
 }
 
 -(void)alertView : (UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0) {
-//        WelcomeViewController *Sec=[[WelcomeViewController alloc]init];
-//        [self.navigationController popViewController: animated:YES];
+    if (buttonIndex == 0)
         [[self navigationController] popViewControllerAnimated:YES];
-        NSLog(@" ======================== ");
+}
+
+-(void)alertMassageForWinner : (NSArray *)mark{
+    if ([self isWin:mark[self.count%2]]) {
+        UIAlertView *winMassage = [[UIAlertView alloc] initWithTitle:nil message:[[@"Player " stringByAppendingString:mark[self.count%2]]stringByAppendingString:@" win"] delegate:self cancelButtonTitle:nil otherButtonTitles:@"Play Again", nil];
+        [winMassage show];
     }
-    
 }
 
 - (IBAction)buttonTabbed:(id)sender {
     NSArray *mark = @[@"X",@"O"];
     [sender setTitle:mark[self.count%2] forState:UIControlStateNormal];
     [sender setEnabled:NO];
+    [sender setTitleColor:[UIColor purpleColor] forState:UIControlStateNormal];
     [self.fillMark replaceObjectAtIndex:[sender tag] withObject:mark[self.count%2]];
-    if ([self isWin:mark[self.count%2]]) {
-        UIAlertView *winMassage = [[UIAlertView alloc] initWithTitle:nil message:[[@"Player " stringByAppendingString:mark[self.count%2]]stringByAppendingString:@" win"] delegate:self cancelButtonTitle:nil otherButtonTitles:@"Play Again", nil];
-        [winMassage show];
-    }
+    [self alertMassageForWinner : mark];
     [self afterTabbingActions : mark];
 }
 
