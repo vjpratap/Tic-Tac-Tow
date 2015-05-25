@@ -31,11 +31,11 @@
     // Dispose of any resources that can be recreated.
 }
 
--(BOOL)checkColumn:(NSString*)playerMark{
+-(BOOL)checkStraightLines:(NSString*)playerMark rowMultiplyer:(NSInteger) rowMultiplyer columnMultiplyer:(NSInteger)columnMultiplyer{
     for(int row = 0; row < 3; row++){
         BOOL won = YES;
         for (int col = 0; col < 3; col++) {
-            won = won && ([self.fillMark[row * 3 + col] isEqualToString:playerMark]);
+            won = won && ([self.fillMark[row * rowMultiplyer + col * columnMultiplyer] isEqualToString:playerMark]);
         }
         if (won)
             return YES;
@@ -43,8 +43,24 @@
     return NO;
 }
 
+-(BOOL)checkDiognals : (NSString *)playerMark{
+    BOOL leftDiognal = YES;
+    BOOL rightDiognal = YES;
+
+    for (int i = 0; i < [_fillMark count]; i = i + 4) {
+        rightDiognal = rightDiognal && ([self.fillMark[i] isEqualToString:playerMark]);
+        leftDiognal = leftDiognal && ([self.fillMark[(i + 4)/2] isEqualToString:playerMark]);
+    }
+    if (leftDiognal || rightDiognal) {
+        return YES;
+    }
+    return NO;
+}
+
 -(BOOL)isWin :(NSString*)playerMark{
-    return [self checkColumn : playerMark];
+    return [self checkStraightLines : playerMark rowMultiplyer: 3 columnMultiplyer: 1] ||
+    [self checkStraightLines : playerMark rowMultiplyer: 1 columnMultiplyer: 3] ||
+    [self checkDiognals : playerMark];
 }
 
 - (void) afterTabbingActions: (NSArray *)mark{
