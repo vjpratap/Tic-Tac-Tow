@@ -65,26 +65,24 @@
 }
 
 - (void) afterTabbingActions: (NSArray *)mark{
-    NSString *player = @"Player . term";
+    NSString *player = @"Player . tern";
     self.count++;
     [self.showNameOfUser setText:[player stringByReplacingOccurrencesOfString:@"." withString:mark[self.count%2]]];
 }
 
 -(void)alertView : (UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 0)
+    if (buttonIndex == 0){
         [[self navigationController] popViewControllerAnimated:YES];
-//        self.fillMark = [NSMutableArray arrayWithObjects:@"",@"",@"",@"",@"",@"",@"",@"",@"",@"", nil];
-//    self.count = 0;
-//    [self viewDidLoad];
-
+//        [self viewDidLoad];
+    }
 }
 
--(void)gameResult : (NSArray *)mark{
-    if ([self isWin:mark[self.count%2]]) {
-        UIAlertView *winMassage = [[UIAlertView alloc] initWithTitle:nil message:[[@"Player " stringByAppendingString:mark[self.count%2]]stringByAppendingString:@" win"] delegate:self cancelButtonTitle:nil otherButtonTitles:@"Play Again", nil];
+-(void)gameResult:(NSString*)currentMark{
+    if ([self isWin:currentMark]) {
+        UIAlertView *winMassage = [[UIAlertView alloc] initWithTitle:nil message:[[@"Player " stringByAppendingString:currentMark]stringByAppendingString:@" win"] delegate:self cancelButtonTitle:nil otherButtonTitles:@"Play Again", nil];
         [winMassage show];
     }
-    if (self.count == 8) {
+    if (self.count == 8 && ![self isWin:currentMark]) {
         UIAlertView *winMassage = [[UIAlertView alloc] initWithTitle:nil message:@"Match Tie" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Play Again", nil];
         [self.showNameOfUser setText:@"Match Tie"];
         [winMassage show];
@@ -93,11 +91,14 @@
 
 - (IBAction)buttonTabbed:(id)sender {
     NSArray *mark = @[@"X",@"O"];
-    [sender setTitle:mark[self.count%2] forState:UIControlStateNormal];
+    NSString *currentMark = mark[self.count%2];
+    [sender setTitle:currentMark forState:UIControlStateNormal];
     [sender setEnabled:NO];
-    [sender setTitleColor:[UIColor purpleColor] forState:UIControlStateNormal];
-    [self.fillMark replaceObjectAtIndex:[sender tag] withObject:mark[self.count%2]];
-    [self gameResult : mark];
+    [sender setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.fillMark replaceObjectAtIndex:[sender tag] withObject:currentMark];
+    if (self.count >= 4) {
+        [self gameResult:currentMark];
+    }
     [self afterTabbingActions : mark];
 }
 
