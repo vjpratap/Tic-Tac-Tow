@@ -75,7 +75,7 @@
     [sender setEnabled:NO];
     [self.fillMark replaceObjectAtIndex:[sender tag] withObject:mark[self.count%2]];
     if ([self isWin:mark[self.count%2]]) {
-        UIAlertView *toast = [[UIAlertView alloc] initWithTitle:nil message:@"You Won" delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
+        UIAlertView *toast = [[UIAlertView alloc] initWithTitle:nil message:[[@"Player " stringByAppendingString:mark[self.count%2]]stringByAppendingString:@" win"] delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
         [toast show];
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
